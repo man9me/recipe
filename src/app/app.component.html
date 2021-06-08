@@ -2,8 +2,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <app-recipes *ngIf="switcher === 1"></app-recipes>
-            <app-shopping-list *ngIf="switcher === 2"></app-shopping-list>
+            <router-outlet></router-outlet>
+
+            <!-- <app-recipes *ngIf="switcher === 1"></app-recipes>
+            <app-shopping-list *ngIf="switcher === 2"></app-shopping-list> -->
         </div>
     </div>
 </div>
