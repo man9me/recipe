@@ -34,6 +34,10 @@ export class RecipeService {
     ),
   ];
 
+  getRecipe(id: number) {
+    return this.recipes[id];
+  }
+
   getRecipes() {
     return this.recipes.slice(); // will return not link but copy of it
   }
