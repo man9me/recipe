@@ -12,9 +12,9 @@ export class RecipesComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
   recipeDetails: Recipe;
   ngOnInit() {
-    this.recipeService.recipeSelected.subscribe((recipe: Recipe) => {
-      this.recipeDetails = recipe;
-    });
+    // this.recipeService.recipeSelected.subscribe((recipe: Recipe) => {
+    //   this.recipeDetails = recipe;
+    // });
   }
   navRecipeDetails(recipe: Recipe) {
     //console.log("click resived main");

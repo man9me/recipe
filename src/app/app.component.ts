@@ -8,13 +8,13 @@ import { Component } from "@angular/core";
 export class AppComponent {
   switcher: number = 0;
 
-  router(route: string) {
-    //console.log(route);
-    const routes = {
-      recipes: 1,
-      shopinglist: 2,
-    };
-    this.switcher = routes[route.toLowerCase()] ?? "route not found";
-    return routes[route.toLowerCase()] ?? "route not found";
-  }
+  // router(route: string) {
+  //   //console.log(route);
+  //   const routes = {
+  //     recipes: 1,
+  //     shopinglist: 2,
+  //   };
+  //   this.switcher = routes[route.toLowerCase()] ?? "route not found";
+  //   return routes[route.toLowerCase()] ?? "route not found";
+  // }
 }
