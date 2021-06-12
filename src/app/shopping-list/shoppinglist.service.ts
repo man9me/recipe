@@ -12,11 +12,21 @@ export class ShoppinglistService {
     new Ingredient("Tomatoes", 10),
   ];
   constructor() {}
-
+  startedEditing = new Subject<number>();
   getIngridients() {
     return this.ingredients.slice();
   }
-
+  updateIngridient(i: number, newIngridient) {
+    this.ingredients[i] = newIngridient;
+    this.ingridientsChanged.next(this.ingredients.slice());
+  }
+  getIngridient(i: number) {
+    return this.ingredients[i];
+  }
+  delIngredient(index: number) {
+    this.ingredients.splice(index, 1);
+    this.ingridientsChanged.next(this.ingredients.slice());
+  }
   addIngridient(ingredient) {
     this.ingredients.push(ingredient);
     this.ingridientsChanged.next(this.ingredients.slice());

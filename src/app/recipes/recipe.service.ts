@@ -7,6 +7,7 @@ import { Recipe } from "./recipe.model";
 })
 export class RecipeService {
   recipeSelected = new Subject<Recipe>();
+  recipesChanged = new Subject<Recipe[]>();
   private recipes: Recipe[] = [
     new Recipe(
       "Холодец",
@@ -42,6 +43,18 @@ export class RecipeService {
   getRecipes() {
     return this.recipes.slice(); // will return not link but copy of it
   }
-
+  addRecipe(recipe: Recipe) {
+    this.recipes.push(recipe);
+    this.recipesChanged.next(this.recipes.slice());
+  }
+  updateRecipe(i: number, recipe: Recipe) {
+    this.recipes[i] = recipe;
+    this.recipesChanged.next(this.recipes.slice());
+  }
+  //addRecipe(recipe: Recipe) {}
+  deleteRecipe(index: number) {
+    this.recipes.splice(index, 1);
+    this.recipesChanged.next(this.recipes.slice());
+  }
   constructor() {}
 }

@@ -6,7 +6,7 @@ import { Component, Output, EventEmitter } from "@angular/core";
 })
 export class HeaderComponent {
   //@Output("route") route = new EventEmitter<string>();
-  collapsed = true;
+  //collapsed = true;
   // redirect(route: string) {
   //   this.route.emit(route);
   // }
