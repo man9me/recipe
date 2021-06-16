@@ -18,7 +18,15 @@ import { AppRoutingModule } from './router.module';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './recipes/recipe.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+  HttpClient,
+  HttpClientModule,
+  HTTP_INTERCEPTORS,
+} from '@angular/common/http';
+import { AuthComponent } from './auth/auth/auth.component';
+import { LoadingSpinerComponent } from './shared/loading-spiner/loading-spiner.component';
+import { AuthInterceptorService } from './auth/auth-interceptor.service';
+import { AuthGuard } from './auth/auth/auth.guard';
 
 @NgModule({
   declarations: [
@@ -34,6 +42,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     Page404Component,
     RecipeStartComponent,
     RecipeEditComponent,
+    AuthComponent,
+    LoadingSpinerComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,7 +52,16 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  providers: [ShoppinglistService, RecipeService],
+  providers: [
+    ShoppinglistService,
+    RecipeService,
+    AuthGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
