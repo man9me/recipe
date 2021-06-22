@@ -28,6 +28,7 @@ import { LoadingSpinerComponent } from './shared/loading-spiner/loading-spiner.c
 import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { AuthGuard } from './auth/auth/auth.guard';
 import { AlertComponent } from './alert/alert/alert.component';
+import { PlaceholderDirective } from './shared/placeholder.directive';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { AlertComponent } from './alert/alert/alert.component';
     AuthComponent,
     LoadingSpinerComponent,
     AlertComponent,
+    PlaceholderDirective,
   ],
   imports: [
     BrowserModule,
@@ -65,5 +67,6 @@ import { AlertComponent } from './alert/alert/alert.component';
     },
   ],
   bootstrap: [AppComponent],
+  entryComponents: [AlertComponent],
 })
 export class AppModule {}
