@@ -29,21 +29,18 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { AuthGuard } from './auth/auth/auth.guard';
 import { AlertComponent } from './alert/alert/alert.component';
 import { PlaceholderDirective } from './shared/placeholder.directive';
+import { RecipesModule } from './recipes/recipes.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
+
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
     Page404Component,
-    RecipeStartComponent,
-    RecipeEditComponent,
+
     AuthComponent,
     LoadingSpinerComponent,
     AlertComponent,
@@ -55,6 +52,7 @@ import { PlaceholderDirective } from './shared/placeholder.directive';
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RecipesModule,
   ],
   providers: [
     ShoppinglistService,
