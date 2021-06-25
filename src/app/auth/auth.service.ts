@@ -3,9 +3,9 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Subject, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { User } from './user.model';
-
-const key: string = 'AIzaSyA5ZZ9ClTKt2y2lUNvZyXdFkqvZXkdO7jY';
+const key: string = environment.key;
 export interface AuthResponseData {
   kind: string;
   idToken: string;
